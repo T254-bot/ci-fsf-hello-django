@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-ci-3fvcz@f6ug9_eswqy+3mzdvvs2&s($^$77@8)zftj-a!-5e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tylerneale-django-todo-app-722df384b9c3.herokuapp.com']
+ALLOWED_HOSTS = ['tylerneale-django-todo-app-722df384b9c3.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -88,6 +88,10 @@ WSGI_APPLICATION = 'django_todo.wsgi.application'
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
+
+# Adjust SSL settings
+if 'default' in DATABASES and 'OPTIONS' in DATABASES['default']:
+    DATABASES['default']['OPTIONS']['sslmode'] = 'require'  # or 'disable' if SSL is not required
 
 
 # Password validation
