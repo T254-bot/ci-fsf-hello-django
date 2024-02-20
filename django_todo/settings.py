@@ -91,7 +91,7 @@ DATABASES = {
 
 # Adjust SSL settings
 if 'default' in DATABASES and 'OPTIONS' in DATABASES['default']:
-    DATABASES['default']['OPTIONS']['sslmode'] = 'require'  # or 'disable' if SSL is not required
+    DATABASES['default']['OPTIONS']['sslmode'] = 'disable'  # or 'disable' if SSL is not require
 
 
 # Password validation
