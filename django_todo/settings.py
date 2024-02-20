@@ -89,11 +89,6 @@ DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
-# Adjust SSL settings
-if 'default' in DATABASES and 'OPTIONS' in DATABASES['default']:
-    DATABASES['default']['OPTIONS']['sslmode'] = 'disable'  # or 'disable' if SSL is not require
-
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
